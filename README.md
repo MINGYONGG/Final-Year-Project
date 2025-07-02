@@ -44,17 +44,22 @@ f) Once the files are downloaded, extract them and place them in a directory for
 **2. Automatically Downloading Using Python Code**
 
 You can also use the following Python code to automatically download the MIT-BIH dataset if it's not already on your machine:
+
 import os
 import wfdb
 
-Directory to save the data
+
  
 download_dir = '/mitdb_data'
 
- Download the data if not already downloaded
+
 if not os.path.exists(download_dir) or not os.listdir(download_dir):
+
     wfdb.dl_database('mitdb', dl_dir=download_dir)
+    
     print("Download complete.")
+    
 else:
+
     print("Dataset already exists.")
 
